@@ -21,3 +21,13 @@ Redirect users to the SSL version of your app. For ExpressJS running on Heroku
     });
 
     app.listen(3000);
+
+### Important
+
+Default environment is production, if you need enable redirect with other environment you need send an array argument.
+
+    app.use(sslRedirect([
+      'other'
+      'development',
+      'production'
+      ]));
