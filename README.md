@@ -31,3 +31,7 @@ Default environment is production, if you need enable redirect with other enviro
       'development',
       'production'
       ]));
+
+### ExpressJS 3.x ([issue #1](https://github.com/paulomcnally/node-heroku-ssl-redirect/issues/1))
+
+    npm install git://github.com/paulomcnally/node-heroku-ssl-redirect.git#express3x --save
