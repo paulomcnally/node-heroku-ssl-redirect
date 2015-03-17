@@ -8,7 +8,7 @@ module.exports = function(environments) {
   return function(req, res, next) {
     if (_.contains(environments, process.env.NODE_ENV)) {
       if (req.headers['x-forwarded-proto'] != 'https') {
-        res.redirect('https://' + req.hostname + req.originalUrl);
+        res.redirect('https://' + req.host + req.originalUrl);
       }
       else {
         next();
