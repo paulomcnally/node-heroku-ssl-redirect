@@ -2,7 +2,6 @@
 * Force load with https on production environment
 * https://devcenter.heroku.com/articles/http-routing#heroku-headers
 */
-var _ = require('underscore');
 module.exports = function(environments, status) {
   environments = environments || ['production'];
   status = status || 302;
