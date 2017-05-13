@@ -27,7 +27,5 @@
     "url": "https://github.com/paulomcnally/node-heroku-ssl-redirect/issues/new"
   },
   "homepage": "https://github.com/paulomcnally/node-heroku-ssl-redirect",
-  "dependencies": {
-    "underscore": "^1.7.0"
-  }
+  "dependencies": {}
 }
