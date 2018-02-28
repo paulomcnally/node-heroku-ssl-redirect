@@ -20,7 +20,7 @@ Redirect users to the SSL version of your app. For ExpressJS running on Heroku
       res.send('hello world');
     });
 
-    app.listen(3000);
+    app.listen(process.env.PORT || 3000);
 
 ### Environments
 
