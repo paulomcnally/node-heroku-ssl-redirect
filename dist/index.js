@@ -1,20 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const sslRedirect = (inputEnvironments, inputStatus) => {
-    const environments = inputEnvironments || ["production"];
-    const status = inputStatus || 302;
-    return function (req, res, next) {
-        if (environments.indexOf(process.env.NODE_ENV) >= 0) {
-            if (req.headers["x-forwarded-proto"] !== "https") {
-                res.redirect(status, "https://" + req.hostname + req.originalUrl);
-            }
-            else {
-                next();
-            }
+const sslRedirect = (environments = ["production"], status = 302) => {
+    const currentEnv = process.env.NODE_ENV;
+    const isCurrentEnv = environments.includes(currentEnv);
+    return (req, res, next) => {
+        if (isCurrentEnv) {
+            req.headers["x-forwarded-proto"] !== "https"
+                ? res.redirect(status, "https://" + req.hostname + req.originalUrl)
+                : next();
         }
-        else {
+        else
             next();
-        }
     };
 };
 exports.default = sslRedirect;
