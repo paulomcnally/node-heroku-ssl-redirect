@@ -1,6 +1,6 @@
 {
   "name": "heroku-ssl-redirect",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "Redirect users to the SSL version of your app. For ExpressJS running on Heroku",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
