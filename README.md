@@ -6,7 +6,7 @@ Redirect users to the SSL version of your app. For ExpressJS running on Heroku
 ### Installation
 
 ```bash
-npm install heroku-ssl-redirect
+yarn add heroku-ssl-redirect
 ```
 
 ### Usage
