@@ -1,7 +1,9 @@
 node-heroku-ssl-redirect
 ========================
 
-Redirect users to the SSL version of your app. For ExpressJS running on Heroku
+Redirect users to the SSL version of your app. For ExpressJS running on Heroku.
+
+This module works only with **import**, don't try to use **require**.
 
 ### Installation
 
@@ -12,17 +14,17 @@ yarn add heroku-ssl-redirect
 ### Usage
 
 ```js
-var sslRedirect = require('heroku-ssl-redirect');
-var express = require('express');
-var app = express();
+import sslRedirect from 'heroku-ssl-redirect';
+import express from 'express';
+const app = express();
 
 // enable ssl redirect
 app.use(sslRedirect());
-
-app.get('/', function(req, res){
+ 
+app.get('/', (req, res) => {
   res.send('hello world');
 });
-
+ 
 app.listen(process.env.PORT || 3000);
 ```
 
@@ -44,10 +46,4 @@ By default a 302 will be used to redirect. A 301 can be configured with the seco
 
 ```js
 app.use(sslRedirect(['production'], 301));
-```
-
-### ExpressJS 3.x ([issue #1](https://github.com/paulomcnally/node-heroku-ssl-redirect/issues/1))
-
-```bash
-npm install git://github.com/paulomcnally/node-heroku-ssl-redirect.git#express3x --save
 ```
