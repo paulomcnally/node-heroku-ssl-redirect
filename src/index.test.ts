@@ -53,7 +53,8 @@ describe("responds accordingly", () => {
     middleware(dummyReq, dummyRes, {});
 
     expect(fakeRedirect).not.toBeCalled();
-  });
+    expect(fakeNext).toBeCalled();
+ });
 
   it("runs on insecure urls", () => {
     // @ts-ignore
